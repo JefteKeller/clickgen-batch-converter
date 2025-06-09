@@ -38,7 +38,7 @@ def get_cmd_args() -> argparse.Namespace:
     parser.add_argument(
         '-s',
         '--cursor-size',
-        type=int,
+        type=str,
         nargs=1,
         default=32,
         help='Cursor size. The following pattern can be used to enable canvasing: "size:canvas_size". Default: %(default)s',
