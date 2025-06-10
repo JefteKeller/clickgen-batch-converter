@@ -1,5 +1,5 @@
 from common.aliases import MakeCursorOptions
-from common.utils import get_cmd_args
+from common.utils import get_cmd_args, success_message
 from handlers import make_cursors
 
 
@@ -18,7 +18,7 @@ def main() -> None:
 
     make_cursors(make_cursor_options)
 
-    return print('Operation complete.')
+    return print(success_message(make_cursor_options))
 
 
 if __name__ == "__main__":

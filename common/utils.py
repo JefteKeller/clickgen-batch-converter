@@ -1,5 +1,7 @@
 import argparse
 
+from common.aliases import MakeCursorOptions
+
 
 def get_cmd_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -72,3 +74,18 @@ def get_cmd_args() -> argparse.Namespace:
     )
 
     return parser.parse_args()
+
+
+def success_message(make_cursor_options: MakeCursorOptions) -> str:
+    return f"""
+    Operation completed using the following settings:
+
+    Platform: {make_cursor_options['platform']}
+    Input Directory: {make_cursor_options['input_dir']}
+    Output Directory: {make_cursor_options['output_dir']}
+
+    Size: {make_cursor_options['cursor_size'].pop() or 32}
+    Type: {make_cursor_options['cursor_type']}
+    Hotspot: {make_cursor_options['cursor_hotspot']}
+    Animation Delay: {make_cursor_options['anim_delay']}
+    """
