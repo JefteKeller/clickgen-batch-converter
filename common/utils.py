@@ -5,8 +5,10 @@ def get_cmd_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        'input_dir',
+        '-i',
+        '--input-dir',
         type=str,
+        required=True,
         help='Path to a directory with cursor files in PNG format.',
     )
 
@@ -14,6 +16,7 @@ def get_cmd_args() -> argparse.Namespace:
         '-o',
         '--output-dir',
         type=str,
+        required=True,
         help='Output directory for the cursor files.',
     )
 
@@ -46,6 +49,7 @@ def get_cmd_args() -> argparse.Namespace:
 
     parser.add_argument(
         '-x',
+        '--hotspot-x',
         type=int,
         default=5,
         help='Hotspot value to be used in the X axis. Default: "%(default)s"',
@@ -53,6 +57,7 @@ def get_cmd_args() -> argparse.Namespace:
 
     parser.add_argument(
         '-y',
+        '--hotspot-y',
         type=int,
         default=5,
         help='Hotspot value to be used in the Y axis. Default: "%(default)s"',

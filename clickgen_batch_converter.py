@@ -12,7 +12,7 @@ def main() -> None:
         'platform': args.platform,
         'cursor_type': args.cursor_type,
         'cursor_size': args.cursor_size,
-        'cursor_hotspot': (args.x, args.y),
+        'cursor_hotspot': (args.hotspot_x, args.hotspot_y),
         'anim_delay': args.anim_delay,
     }
 
