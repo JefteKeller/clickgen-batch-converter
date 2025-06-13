@@ -1,6 +1,7 @@
 attrs==25.3.0
 clickgen==2.2.5
 numpy==2.2.3
+pathvalidate==3.2.3
 pillow==11.1.0
 PyYAML==6.0.2
 toml==0.10.2
