@@ -1,5 +1,7 @@
 import argparse
 
+from pathvalidate.argparse import sanitize_filepath_arg
+
 from common.aliases import MakeCursorOptions
 
 
@@ -9,7 +11,7 @@ def get_cmd_args() -> argparse.Namespace:
     parser.add_argument(
         '-i',
         '--input-dir',
-        type=str,
+        type=sanitize_filepath_arg,
         required=True,
         help='Path to a directory with cursor files in PNG format.',
     )
@@ -17,7 +19,7 @@ def get_cmd_args() -> argparse.Namespace:
     parser.add_argument(
         '-o',
         '--output-dir',
-        type=str,
+        type=sanitize_filepath_arg,
         required=True,
         help='Output directory for the cursor files.',
     )
